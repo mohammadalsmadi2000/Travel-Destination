@@ -5,7 +5,6 @@ import Footer from "../footer/Footer";
 function Home() {
     return (
         <div>
-            <Header title="Travel Destination" />
             <Tours />
             <Footer />
         </div>

@@ -1,20 +1,16 @@
 import './Tours.css'
-
+import Tour from './tour/Tour';
 const data = require("../../data/db.json");
 
 function Tours() {
     return (
         <div className="tours-container">
             {data.map((item) => (
-                <div className="tour" key={item.id}>
-                    <img src={item.image} alt={item.name} />
-                    <div className="tour-info">
-                        <h3 className="tour-title">{item.name}</h3>
-                        {/* <h3 className='tour-price'>{item.price}</h3> */}
-                    </div>
-                </div>
+
+                <Tour id={item.id} name={item.name} img={item.image} path={`/city/${item.id}`} />
             ))}
         </div>
+
     );
 }
 
