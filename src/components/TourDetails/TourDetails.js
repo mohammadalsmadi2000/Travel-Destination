@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import Tour from "../tours/tour/Tour";
 import './TourDetails.css'
 import { useState } from "react";
+import { Text } from 'react-native-web'
 const data = require("../../data/db.json");
 
 function TourDetails() {
@@ -46,12 +47,16 @@ function TourDetails() {
                     </div>
                     <div className="details-div-info">
                         <p>
-                            {seeMore ? <>{firstThreeLines}  <button onClick={toggleDescription}>
-                                {!seeMore ? 'See Less' : 'See More'}
-                            </button>
-                            </> : <>{element[0].info} <button onClick={toggleDescription}>
-                                {!seeMore ? 'See Less' : 'See More'}
-                            </button></>}
+                            {seeMore ? <> <Text numberOfLines={3} >
+                                {element[0].info}
+                            </Text>  <button onClick={toggleDescription}>
+                                    {!seeMore ? 'See Less' : 'See More'}
+                                </button>
+                            </> : <> <Text >
+                                {element[0].info}
+                            </Text> <button onClick={toggleDescription}>
+                                    {!seeMore ? 'See Less' : 'See More'}
+                                </button></>}
                         </p>
                     </div>
                 </div>
